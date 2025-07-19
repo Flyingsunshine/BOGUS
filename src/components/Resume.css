@@ -571,4 +571,60 @@ body.dark-theme .tech-tag {
     margin-top: 4px;
   }
 }
+/* Achievements Section Styles */
+.achievement-item-card {
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
 
+.achievement-item-card:last-child {
+  margin-bottom: 0;
+}
+
+.achievement-item-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg); /* Add subtle shadow on hover */
+}
+
+.achievement-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.achievement-issuer {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.achievement-date {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.achievement-verify-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.achievement-verify-link:hover {
+  color: var(--primary-hover);
+}
+
+.achievement-verify-link .external-icon {
+  width: 14px;
+  height: 14px;
+}

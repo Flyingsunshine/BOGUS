@@ -71,6 +71,7 @@ const Resume = () => {
             <Experience /> {/* Renamed from Internships in previous step to Experience as per user provided code in this turn*/}
             <Education />
             <Projects />
+            <Achievemnts/> {/* Achievements section added */}
           </div>
         </div>
       </div>
@@ -419,5 +420,45 @@ const ExtracurricularActivities = () => (
     </div>
   </AnimatedSection>
 );
+// Achievements Component
+const Achievements = () => {
+  const achievementsList = [
+    {
+      name: "Introduction to Cloud Computing",
+      issuer: "IBM / Coursera",
+      date: "Jun 20, 2025",
+      verifyLink: "https://www.credly.com/badges/b582ed46-851a-4a70-96ef-1fd3bdba9c97"
+    },
+    {
+      name: "Introduction to DevOps",
+      issuer: "IBM / Coursera",
+      date: "Jun 18, 2025",
+      verifyLink: "https://www.credly.com/badges/591eb27a-0c77-4885-9060-6cc74eae5142"
+    }
+  ];
+
+  return (
+    <AnimatedSection delay={0.9}> {/* Adjust delay as needed */}
+      <div className="card achievements-card">
+        <h3 className="section-title">Achievements</h3>
+        {achievementsList.map((achievement, index) => (
+          <motion.div
+            key={index}
+            className="achievement-item-card" /* Using a new class name to avoid conflict with existing 'achievement-item' */
+            whileHover={{ scale: 1.02, y: -2 }}
+            transition={{ duration: 0.2 }}
+          >
+            <h4 className="achievement-name">{achievement.name}</h4>
+            <p className="achievement-issuer">{achievement.issuer}</p>
+            <p className="achievement-date">Issued on: {achievement.date}</p>
+            <a href={achievement.verifyLink} className="achievement-verify-link" target="_blank" rel="noopener noreferrer">
+              Verify Credential <ExternalLink className="icon external-icon" />
+            </a>
+          </motion.div>
+        ))}
+      </div>
+    </AnimatedSection>
+  );
+};
 
 export default Resume;
