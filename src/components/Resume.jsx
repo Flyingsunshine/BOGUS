@@ -326,6 +326,11 @@ const Education = () => (
         <p className="education-period">2022 - 2026</p>
         <p className="education-gpa">SGPA: 9.50/10.0</p>
         <p className="education-gpa">CGPA: 8.26/10.0</p>
+        <h4 className="education-title">Schooling:</h4>
+        <p className="education-school">South Point School</p>
+        <p className="education-period">2007 - 2021</p>
+        <p className="education-score">Class 10: 92.8%(2020)</p>
+        <p className="education-score">Class 12: 71.9%(2022)</p>
       </motion.div>
     </div>
   </AnimatedSection>
