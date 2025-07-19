@@ -1,0 +1,574 @@
+/* CSS Variables for Theme */
+:root {
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary-color: #8b5cf6;
+  --background-color: #f9fafb;
+  --surface-color: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border-color: #e5e7eb;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+  --background-color: #111827;
+  --surface-color: #1f2937;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-color: #374151;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--background-color);
+  transition: all 0.3s ease;
+}
+
+/* Resume Container */
+.resume-container {
+  min-height: 100vh;
+  background-color: var(--background-color);
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.resume-content {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Fixed Buttons */
+.theme-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 50;
+  padding: 12px;
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  border: none;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+.download-btn {
+  position: fixed;
+  top: 24px;
+  right: 80px;
+  z-index: 50;
+  padding: 8px 16px;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Icons */
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sun-icon {
+  color: #f59e0b;
+}
+
+.moon-icon {
+  color: var(--text-secondary);
+}
+
+/* Header Section */
+.header-section {
+  text-align: center;
+  margin-bottom: 32px;
+  padding: 32px;
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl);
+  transition: all 0.3s ease;
+}
+
+.profile-avatar {
+  width: 128px;
+  height: 128px;
+  background: var(--gradient);
+  border-radius: 50%;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.description {
+  color: var(--text-secondary);
+  max-width: 512px;
+  margin: 0 auto;
+}
+
+/* Main Grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Cards */
+.card {
+  background-color: var(--surface-color);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+/* Contact Section */
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--primary-color);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.contact-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--primary-color);
+}
+
+.contact-text {
+  color: var(--text-secondary);
+}
+
+.external-icon {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover .external-icon {
+  opacity: 1;
+}
+
+/* Skills Section */
+.skill-item {
+  margin-bottom: 16px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.skill-name {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.skill-percentage {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--gradient);
+  border-radius: 4px;
+  transition: all 1s ease;
+}
+
+/* Languages Section */
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 4px 0;
+  transition: all 0.2s ease;
+}
+
+.language-name {
+  color: var(--text-secondary);
+}
+
+.language-level {
+  padding: 4px 12px;
+  background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+  color: var(--primary-color);
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+body.dark-theme .language-level {
+  background-color: color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+
+/* Experience Section */
+.experience-item {
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+.experience-content {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 24px;
+  padding-bottom: 24px;
+}
+
+.experience-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.experience-company {
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.experience-period {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.experience-description {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.achievement-list {
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-item {
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 16px;
+}
+
+.achievement-item::before {
+  content: '•';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+}
+
+/* Education Section */
+.education-item {
+  border-left: 4px solid var(--secondary-color);
+  padding-left: 24px;
+  transition: all 0.2s ease;
+}
+
+.education-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.education-school {
+  color: var(--secondary-color);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.education-period {
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.education-gpa {
+  color: var(--text-secondary);
+}
+
+/* Projects Section */
+.project-item {
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
+}
+
+.project-item:last-child {
+  margin-bottom: 0;
+}
+
+.project-item:hover {
+  border-color: var(--primary-color);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.project-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.project-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--primary-hover);
+}
+
+.project-description {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  padding: 4px 12px;
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 12px;
+  font-size: 12px;
+  transition: all 0.1s ease;
+}
+
+body.dark-theme .tech-tag {
+  background-color: var(--border-color);
+}
+
+/* Print Styles */
+@media print {
+  .theme-toggle,
+  .download-btn {
+    display: none !important;
+  }
+  
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb;
+  }
+  
+  body.dark-theme {
+    --background-color: white;
+    --surface-color: white;
+    --text-primary: black;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .resume-content {
+    padding: 16px;
+  }
+  
+  .theme-toggle {
+    top: 16px;
+    right: 16px;
+  }
+  
+  .download-btn {
+    top: 16px;
+    right: 64px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .header-section {
+    padding: 24px;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  .title {
+    font-size: 18px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+}
+/* Extracurricular Activities Styles */
+.activity-item {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border-left: 3px solid var(--primary-color);
+  background-color: color-mix(in srgb, var(--primary-color) 5%, transparent);
+}
+
+.activity-item:hover {
+  background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+  transform: translateX(5px);
+}
+
+.activity-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.activity-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  min-width: 24px;
+}
+
+.activity-name {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.activity-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.4;
+  margin-left: 36px;
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .academic-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .education-grades {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .grade-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .activity-description {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+}
+
