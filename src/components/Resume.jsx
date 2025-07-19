@@ -71,7 +71,7 @@ const Resume = () => {
             <Experience /> {/* Renamed from Internships in previous step to Experience as per user provided code in this turn*/}
             <Education />
             <Projects />
-            <Achievemnts/> {/* Achievements section added */}
+            <Achievements/> {/* Achievements section added */}
           </div>
         </div>
       </div>
